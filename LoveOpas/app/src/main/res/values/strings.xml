@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">LoveOpas</string>
     <string name="title_activity_horoscope">Horoscope</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_date">date</string>
+
+    <string name="pref_notify">notify</string>
+
 </resources>

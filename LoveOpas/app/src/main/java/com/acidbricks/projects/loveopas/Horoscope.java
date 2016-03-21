@@ -1,16 +1,20 @@
 package com.acidbricks.projects.loveopas;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,6 +32,8 @@ import java.net.URL;
 
 public class Horoscope extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +46,7 @@ public class Horoscope extends AppCompatActivity {
 
 
 
-        new GetHoroscope().execute("libra");
+        new GetHoroscope().execute("Libra");
     }
 
 
@@ -52,12 +58,29 @@ public class Horoscope extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId()==R.id.settings)
+        {
+
+            startActivity(new Intent(this,UserPreferences.class));
+            return true;
+        }
+        else
+        {
+            return  false;
+
+        }
+    }
+
     final class  GetHoroscope extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... star) {
             //fetch places
 
-            String uri = "http://widgets.fabulously40.com/horoscope.json?sign=";
+            String uri = "http://horoscope-api.herokuapp.com/horoscope/today/";
             // updateFinished = false;
             StringBuilder placesBuilder = new StringBuilder();
 
@@ -128,20 +151,24 @@ public class Horoscope extends AppCompatActivity {
                     //attempt to retrieve place data values
                     missingValue = false;
                     //get place at this index
-                    JSONObject parentObject = new JSONObject(result);//placesArray.getJSONObject(p);
-                    JSONObject parent = parentObject.getJSONObject("horoscope");
-                    String prediction = parent.getString("horoscope");
+                    JSONObject parentObject = new JSONObject(result);
 
-                    String sign = parent.getString("sign");
+                    String prediction = parentObject.getString("horoscope");
+                    prediction=prediction.replace("\\u201d"," ");
+                    prediction=prediction.replace("\\u201c"," ");
+                    prediction=prediction.replace("\\u2019","\'");
 
                     TextView horoText=(TextView) findViewById(R.id.textView);
-                    horoText.setText(prediction);
+                    String horoscopeResult=prediction;
+
+                    horoText.setText(horoscopeResult);
 
                 } catch (JSONException jse) {
-                    Log.v("PLACES", "missing value");
+                    Log.v("Horo", "missing value");
                     missingValue = true;
                     jse.printStackTrace();
                     TextView horoText=(TextView) findViewById(R.id.textView);
+
                     horoText.setText(result);
 
                 }

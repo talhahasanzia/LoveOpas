@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <EditTextPreference
+        android:title="Date of Birth"
+        android:key="@string/pref_date"
+        android:defaultValue="false"
+        android:contentDescription="Set date of birth for star"
+        android:inputType="date"
+        />
+    <CheckBoxPreference
+        android:title="Notifications"
+        android:key="@string/pref_notify"
+        android:defaultValue="true"
+        android:contentDescription="Notify me on horoscope updates"
+        />
+
+
+</PreferenceScreen>

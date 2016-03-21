@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:background="@drawable/background2"
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +11,7 @@
         android:id="@+id/my_toolbar"
        android:layout_width="match_parent"
       android:layout_height="wrap_content"
-
+        android:minHeight="?attr/actionBarSize"
         android:theme="@style/AppToolbar"
         />
 
@@ -21,11 +21,12 @@
         android:layout_height="wrap_content"
         android:text="Loading"
         android:id="@+id/textView"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="201dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:textSize="26dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginRight="40dp" />
 
 
 </RelativeLayout>
