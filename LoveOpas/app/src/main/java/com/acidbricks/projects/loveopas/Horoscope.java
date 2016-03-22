@@ -44,9 +44,10 @@ public class Horoscope extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        ZodiacSign zodiac=new ZodiacSign(getApplicationContext());
+        String star=zodiac.getZodiac();
 
-
-        new GetHoroscope().execute("Libra");
+        new GetHoroscope().execute(star);
     }
 
 
@@ -157,7 +158,7 @@ public class Horoscope extends AppCompatActivity {
                     prediction=prediction.replace("\\u201d"," ");
                     prediction=prediction.replace("\\u201c"," ");
                     prediction=prediction.replace("\\u2019","\'");
-
+                    prediction=prediction.replace("['","");
                     TextView horoText=(TextView) findViewById(R.id.textView);
                     String horoscopeResult=prediction;
 
