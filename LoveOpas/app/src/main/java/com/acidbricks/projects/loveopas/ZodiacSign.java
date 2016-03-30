@@ -32,6 +32,39 @@ public class ZodiacSign extends AppCompatActivity {
     }
 
 
+    public int getSign(String star)
+    {
+        int resourceID=0;
+
+        if(star=="Aquarius")
+            resourceID=R.drawable.aqua;
+        if(star=="Pisces")
+            resourceID=R.drawable.pis;
+        if(star=="Aries")
+            resourceID=R.drawable.arie;
+        if(star=="Taurus")
+            resourceID=R.drawable.tau;
+        if(star=="Gemini")
+            resourceID=R.drawable.gem;
+        if(star=="Cancer")
+            resourceID=R.drawable.can;
+        if(star=="Leo")
+            resourceID=R.drawable.leo;
+        if(star=="Virgo")
+            resourceID=R.drawable.virgo;
+        if(star=="Libra")
+            resourceID=R.drawable.lib;
+        if(star=="Scorpio")
+            resourceID=R.drawable.sco;
+        if(star=="Sagittarius")
+            resourceID=R.drawable.sag;
+        if(star=="Capricorn")
+            resourceID=R.drawable.cap;
+
+
+        return resourceID;
+    }
+
     String CalculateZodiac(String date)
     {
         String star="none";
@@ -56,8 +89,11 @@ public class ZodiacSign extends AppCompatActivity {
 
             }
 
-            int d=Integer.parseInt(day);
-            int m=Integer.parseInt(month);
+            int m=Integer.parseInt(day);
+            int d=Integer.parseInt(month);
+
+            if(d>31 || m>12 || d<0 || m<0)
+                return "none";
 
            // Log.d("Conversion","Day "+d+"Month "+m);
 
@@ -85,13 +121,18 @@ public class ZodiacSign extends AppCompatActivity {
             if((m==11 && d>=22 ) || (m==12 && d<=21))
                 star= "Sagittarius";
             if((m==12 && d>=22 ) || (m==1 && d<=19))
-                star= "Gemini";
+                star= "Capricorn";
 
 
 
 
 
 
+        }
+        catch (IndexOutOfBoundsException ex)
+        {
+
+            Log.d("Error","Parse error",ex);
         }
         catch (Exception e)
         {

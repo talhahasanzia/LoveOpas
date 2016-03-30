@@ -1,11 +1,14 @@
 package com.acidbricks.projects.loveopas;
 
+import android.app.ActionBar;
 import android.content.Intent;
+
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -15,12 +18,17 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,22 +40,44 @@ import java.net.URL;
 
 public class Horoscope extends AppCompatActivity {
 
-
-
+    String star;
+    ImageView signView;
+    ImageView iv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horoscope);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-
+        iv=(ImageView)findViewById(R.id.imageView);
         setSupportActionBar(myToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
-        ZodiacSign zodiac=new ZodiacSign(getApplicationContext());
-        String star=zodiac.getZodiac();
 
+        signView=(ImageView)findViewById(R.id.signView);
+
+
+        TextView tv=(TextView)findViewById(R.id.textView);
+
+
+
+
+        ZodiacSign zodiac=new ZodiacSign(getApplicationContext());
+
+        star=zodiac.getZodiac();
+        int resID=zodiac.getSign(star);
+
+
+        if(star=="none" || resID==0)
+        {
+
+            tv.setText("Please enter date of birth correctly in settings and have a good day!");
+            signView.setImageResource(R.drawable.info);
+        }
+        else{
         new GetHoroscope().execute(star);
+        }
+
     }
 
 
@@ -123,7 +153,7 @@ public class Horoscope extends AppCompatActivity {
             } catch (IOException e) {
                 Log.e("test", "Error connecting to Places API", e);
                 placesBuilder=new StringBuilder();
-                placesBuilder.append("Error connecting to the internet");
+                placesBuilder.append("Error connecting to the internet \n Check your internet connection and if you donot have internet connection donot watch fucking porn on free wifi, pay some internet fee atleast if you are not watching premium videos. Go fuck yourself.");
             }
 
             return placesBuilder.toString();
@@ -163,14 +193,21 @@ public class Horoscope extends AppCompatActivity {
                     String horoscopeResult=prediction;
 
                     horoText.setText(horoscopeResult);
+                    iv.setMaxWidth(horoText.getMaxWidth() + 20);
+                    iv.setMaxHeight(horoText.getMaxHeight() + 20);
+                    signView.setImageResource(new ZodiacSign(getApplicationContext()).getSign(star));
+
 
                 } catch (JSONException jse) {
-                    Log.v("Horo", "missing value");
-                    missingValue = true;
-                    jse.printStackTrace();
-                    TextView horoText=(TextView) findViewById(R.id.textView);
+                            Log.v("Horo", "missing value");
+                            missingValue = true;
+                            jse.printStackTrace();
+                            TextView horoText=(TextView) findViewById(R.id.textView);
 
-                    horoText.setText(result);
+                            horoText.setText(result);
+
+                    signView.setImageResource(R.drawable.info);
+
 
                 }
 //            }

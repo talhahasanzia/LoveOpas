@@ -6,7 +6,7 @@
     <EditTextPreference
         android:title="Date of Birth"
         android:key="@string/pref_date"
-        android:defaultValue="false"
+        android:defaultValue="12/31/1999"
         android:contentDescription="Set date of birth for star"
         android:inputType="date"
         />

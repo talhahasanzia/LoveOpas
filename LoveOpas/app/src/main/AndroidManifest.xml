@@ -29,10 +29,18 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.acidbricks.projects.loveopas.MainActivity" />
         </activity>
-        <activity android:name=".UserPreferences"
-            android:screenOrientation="portrait"
+        <activity
+            android:name=".UserPreferences"
             android:parentActivityName=".Horoscope"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Settings" />
+        <activity android:name=".contact_me"
+            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
             >
+
+
 
         </activity>
     </application>

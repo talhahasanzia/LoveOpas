@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.acidbricks.projects.loveopas.Settings">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/top"
+
+        />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppToolbar"
+
+        android:layout_alignParentTop="true"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView"
+
+        android:background="@drawable/background2"
+        >
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|top"
+
+            >
+
+            <EditText
+                android:layout_width="40dp"
+                android:background="@drawable/rounded_corner"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textAlignment="center"
+                android:text="mm"
+                android:textColor="@color/textForeground"
+                android:id="@+id/monthText"
+                android:layout_marginTop="40dp"
+                android:width="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Date of Birth:"
+                android:id="@+id/textView2"
+                android:layout_above="@+id/textView3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:textColor="#ce0948" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="/"
+                android:id="@+id/textView3"
+                android:layout_alignBottom="@+id/monthText"
+                android:layout_toRightOf="@+id/monthText"
+                android:layout_toEndOf="@+id/monthText"
+                android:textColor="#ce0948" />
+
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textAlignment="center"
+                android:text="dd"
+                android:textColor="@color/textForeground"
+
+                android:background="@drawable/rounded_corner"
+                android:id="@+id/dayText"
+                android:width="40dp"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_toRightOf="@+id/textView3"
+                android:layout_toEndOf="@+id/textView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="/"
+                android:id="@+id/textView4"
+                android:layout_alignBottom="@+id/dayText"
+                android:layout_toRightOf="@+id/dayText"
+                android:layout_toEndOf="@+id/dayText"
+                android:textColor="#ce0948" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:background="@drawable/rounded_corner"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textAlignment="center"
+                android:text="yyyy"
+                android:textColor="@color/textForeground"
+
+                android:id="@+id/yearText"
+                android:width="40dp"
+                android:layout_alignBottom="@+id/textView4"
+                android:layout_toRightOf="@+id/textView4"
+                android:layout_toEndOf="@+id/textView4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Star Select:"
+                android:id="@+id/textView5"
+                android:textColor="#ce0948"
+                android:layout_below="@+id/textView3"
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_alignStart="@+id/textView2"
+                android:layout_marginTop="42dp" />
+
+            <EditText
+                android:layout_width="140dp"
+                android:background="@drawable/rounded_corner"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:textAlignment="center"
+                android:text="Enter your star"
+                android:textColor="@color/textForeground"
+
+                android:id="@+id/starText"
+                android:width="140dp"
+                android:layout_below="@+id/textView5"
+                android:layout_alignLeft="@+id/monthText"
+                android:layout_alignStart="@+id/monthText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Notificatios:"
+                android:id="@+id/textView6"
+                android:textColor="#ce0948"
+                android:layout_marginTop="46dp"
+                android:layout_below="@+id/starText"
+                android:layout_alignLeft="@+id/textView5"
+                android:layout_alignStart="@+id/textView5" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:height="30dp"
+                android:track="@drawable/thumb"
+                android:thumbTint="@color/colorAccent"
+                android:id="@+id/notifySwitch"
+                android:layout_below="@+id/textView6"
+                android:layout_toLeftOf="@+id/dayText"
+                android:layout_toStartOf="@+id/dayText" />
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

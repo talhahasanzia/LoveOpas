@@ -1,71 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_relativeLayout"
+
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.acidbricks.projects.loveopas.MainActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/top"
+/>
 
-    <ImageButton
-android:src="@drawable/horoscopeicon"
-        android:background="@null"
-        android:layout_marginLeft="40dp"
-android:layout_marginRight="40dp"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/horo"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
 
-    <ImageButton
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/lovecalculatoricon"
-        android:background="@null"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
-        android:id="@+id/love"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:layout_below="@+id/horo"
-        android:layout_centerHorizontal="true"
-        />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView"
 
-    <ImageButton
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/contactmeicon"
-        android:background="@null"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
-        android:id="@+id/contact"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:layout_below="@+id/love"
-        android:layout_centerHorizontal="true" />
+        android:background="@drawable/background2"
+        >
+        <RelativeLayout
+            android:id="@+id/main_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
 
-    <ImageButton
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/aboutmeicon"
-        android:background="@null"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
-        android:id="@+id/about"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:layout_below="@+id/contact"
-        android:layout_centerHorizontal="true" />
 
+            >
+
+            <ImageButton
+                android:src="@drawable/aboutmeicon"
+                android:background="@null"
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageButton2"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_alignParentRight="false"
+                android:layout_alignParentEnd="false"
+                android:layout_centerInParent="true" />
+
+            <ImageButton
+                android:src="@drawable/contactmeicon"
+                android:background="@null"
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageButton"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_below="@+id/imageButton2"
+                android:layout_centerHorizontal="true" />
+
+            <ImageButton
+                android:src="@drawable/lovecalculatoricon"
+                android:background="@null"
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageButton3"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_above="@+id/imageButton2"
+                android:layout_centerHorizontal="true" />
+
+            <ImageButton
+                android:src="@drawable/horoscopeicon"
+                android:background="@null"
+                android:layout_width="400dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageButton4"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:layout_above="@+id/imageButton3"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+
+</FrameLayout>
 </RelativeLayout>
