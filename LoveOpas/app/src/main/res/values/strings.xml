@@ -6,7 +6,9 @@
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
-    <string name="pref_date">date</string>
+    <string name="pref_month">month</string>
+    <string name="pref_day">day</string>
+    <string name="pref_year">year</string>
 
     <string name="pref_notify">notify</string>
 

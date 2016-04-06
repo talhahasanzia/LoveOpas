@@ -11,6 +11,7 @@
         android:layout_height="200dp"
         android:id="@+id/imageView"
         android:background="@drawable/top"
+
 />
 
 
@@ -19,7 +20,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/imageView"
 
-        android:background="@drawable/background2"
+android:background="@drawable/background2"
         >
         <RelativeLayout
             android:id="@+id/main_relativeLayout"
@@ -34,7 +35,7 @@
                 android:background="@null"
                 android:layout_width="400dp"
                 android:layout_height="40dp"
-                android:id="@+id/imageButton2"
+                android:id="@+id/about"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
                 android:layout_alignParentRight="false"
@@ -46,10 +47,10 @@
                 android:background="@null"
                 android:layout_width="400dp"
                 android:layout_height="40dp"
-                android:id="@+id/imageButton"
+                android:id="@+id/contact"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:layout_below="@+id/imageButton2"
+                android:layout_below="@+id/about"
                 android:layout_centerHorizontal="true" />
 
             <ImageButton
@@ -57,10 +58,10 @@
                 android:background="@null"
                 android:layout_width="400dp"
                 android:layout_height="40dp"
-                android:id="@+id/imageButton3"
+                android:id="@+id/lovcal"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:layout_above="@+id/imageButton2"
+                android:layout_above="@+id/about"
                 android:layout_centerHorizontal="true" />
 
             <ImageButton
@@ -68,10 +69,10 @@
                 android:background="@null"
                 android:layout_width="400dp"
                 android:layout_height="40dp"
-                android:id="@+id/imageButton4"
+                android:id="@+id/horo"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                android:layout_above="@+id/imageButton3"
+                android:layout_above="@+id/lovcal"
                 android:layout_centerHorizontal="true" />
 
         </RelativeLayout>

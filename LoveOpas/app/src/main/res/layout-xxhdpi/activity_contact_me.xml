@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.acidbricks.projects.loveopas.contact_me">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/top"
+
+        />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/AppToolbar"
+
+        android:layout_alignParentTop="true"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView"
+        android:background="@drawable/background2"
+
+        >
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|top"
+
+            >
+
+
+            <EditText
+                android:background="@drawable/rounded_corner"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:id="@+id/messageText"
+                android:singleLine="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:padding="5dp"
+                android:text="Message\n\n\n\n"
+                android:textColor="#8b8b8b"
+                android:layout_above="@+id/buttonEmail"
+              />
+
+            <EditText
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_corner"
+                android:layout_height="wrap_content"
+                android:id="@+id/subjectText"
+                android:layout_above="@+id/messageText"
+                android:layout_centerHorizontal="true"
+                android:text="Subject"
+                android:textColor="#8b8b8b" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_corner"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailText"
+                android:padding="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_above="@+id/subjectText"
+                android:layout_centerHorizontal="true"
+                android:text="Email"
+                android:textColor="#8b8b8b" />
+
+            <ImageButton
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonEmail"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:src="@drawable/email"
+                android:layout_marginBottom="5dp"
+                android:layout_above="@+id/buttonWebsite"
+                android:layout_centerHorizontal="true" />
+
+            <ImageButton
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonWebsite"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:layout_marginBottom="10dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/website"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/buttonEmail"
+                android:layout_alignStart="@+id/buttonEmail" />
+
+            <ImageButton
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/callButton"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="5dp"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:src="@drawable/website"
+                android:layout_above="@+id/emailText"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</RelativeLayout>

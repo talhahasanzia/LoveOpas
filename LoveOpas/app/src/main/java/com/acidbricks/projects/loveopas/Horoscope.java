@@ -1,6 +1,7 @@
 package com.acidbricks.projects.loveopas;
 
 import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
@@ -54,6 +55,15 @@ public class Horoscope extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
 
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+
         signView=(ImageView)findViewById(R.id.signView);
 
 
@@ -63,8 +73,14 @@ public class Horoscope extends AppCompatActivity {
 
 
         ZodiacSign zodiac=new ZodiacSign(getApplicationContext());
+        SharedPreferences sharedPrefs  = getSharedPreferences("myPrefs",Context.MODE_PRIVATE);
 
-        star=zodiac.getZodiac();
+
+        String days=sharedPrefs.getString("day", "31");
+        String months=sharedPrefs.getString("month", "12");
+        String years=sharedPrefs.getString("year", "1999");
+
+        star=zodiac.CalculateZodiac(months,days);
         int resID=zodiac.getSign(star);
 
 
@@ -75,11 +91,10 @@ public class Horoscope extends AppCompatActivity {
             signView.setImageResource(R.drawable.info);
         }
         else{
-        new GetHoroscope().execute(star);
+            new GetHoroscope().execute(star);
         }
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -96,7 +111,7 @@ public class Horoscope extends AppCompatActivity {
         if(item.getItemId()==R.id.settings)
         {
 
-            startActivity(new Intent(this,UserPreferences.class));
+            startActivity(new Intent(this,Settings.class));
             return true;
         }
         else
@@ -193,8 +208,6 @@ public class Horoscope extends AppCompatActivity {
                     String horoscopeResult=prediction;
 
                     horoText.setText(horoscopeResult);
-                    iv.setMaxWidth(horoText.getMaxWidth() + 20);
-                    iv.setMaxHeight(horoText.getMaxHeight() + 20);
                     signView.setImageResource(new ZodiacSign(getApplicationContext()).getSign(star));
 
 

@@ -20,17 +20,48 @@ public class ZodiacSign extends AppCompatActivity {
     }
 
 
-    public String getZodiac()
+
+
+
+    public void setDate(String day, String month, String year)
     {
+        SharedPreferences sharedPrefs = getSharedPreferences("myPrefs",appContext.MODE_PRIVATE);
 
-        SharedPreferences sharedPrefs =
-                PreferenceManager.getDefaultSharedPreferences(appContext);
+        try
+        {
+            sharedPrefs.edit().putString("day",day);
+            sharedPrefs.edit().putString("month",month);
+            sharedPrefs.edit().putString("year",year);
+            sharedPrefs.edit().commit();
 
-        String date =sharedPrefs.getString("date", "No date found");
-        return CalculateZodiac(date);
+        }
+        catch (Exception ex)
+        {
+            Log.d("Saving","Date error",ex);
+
+        }
+
 
     }
 
+    public boolean setNotify(boolean onOff)
+    {
+        SharedPreferences sharedPrefs = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+        try
+        {
+
+            sharedPrefs.edit().putBoolean("notify",onOff);
+            sharedPrefs.edit().commit();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Log.d("Saving","Date error",ex);
+            return false;
+        }
+
+
+    }
 
     public int getSign(String star)
     {
@@ -65,32 +96,13 @@ public class ZodiacSign extends AppCompatActivity {
         return resourceID;
     }
 
-    String CalculateZodiac(String date)
+    public String CalculateZodiac(String month, String day)
     {
-        String star="none";
-        String day="";
-        String month="";
-        try {
-            int dayIndex = date.indexOf('/');
-            int i=0;
-
-            while(i<dayIndex)
-            {
-
-                day+=Character.toString(date.charAt(i));
-                i++;
-
-            }
-            i++;
-            while(date.toCharArray()[i]!='/')
-            {
-                month+=Character.toString(date.charAt(i));
-                i++;
-
-            }
-
-            int m=Integer.parseInt(day);
-            int d=Integer.parseInt(month);
+            String star="none";
+        try
+        {
+            int m=Integer.parseInt(month);
+            int d=Integer.parseInt(day);
 
             if(d>31 || m>12 || d<0 || m<0)
                 return "none";

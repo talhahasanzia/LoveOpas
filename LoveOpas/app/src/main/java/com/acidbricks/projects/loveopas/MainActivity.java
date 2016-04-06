@@ -40,10 +40,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final RelativeLayout rl=(RelativeLayout) findViewById(R.id.main_relativeLayout);
+//        final RelativeLayout rl=(RelativeLayout) findViewById(R.id.main_relativeLayout);
 
-        ZodiacSign z=new ZodiacSign(getApplicationContext());
-        String s=z.getZodiac();
 
         //rl.setBackgroundResource(R.drawable.background2);
 
@@ -77,6 +75,40 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        ImageButton contact=(ImageButton) findViewById(R.id.contact);
+
+
+        contact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                startActivity(new Intent(getApplicationContext(), contact_me.class));
+
+
+            }
+        });
+
+
+        ImageButton love=(ImageButton) findViewById(R.id.lovcal);
+
+
+        love.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                startActivity(new Intent(getApplicationContext(), lovecalculator.class));
+
+
+            }
+        });
+
+
+
     }
 
 

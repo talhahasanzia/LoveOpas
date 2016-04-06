@@ -30,19 +30,21 @@
                 android:value="com.acidbricks.projects.loveopas.MainActivity" />
         </activity>
         <activity
-            android:name=".UserPreferences"
+            android:name=".Settings"
             android:parentActivityName=".Horoscope"
-            android:screenOrientation="portrait" />
-        <activity android:name=".Settings" />
-        <activity android:name=".contact_me"
-            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".contact_me"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            >
-
-
-
-        </activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".lovecalculator"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".PreferencesTEst"></activity>
     </application>
 
 </manifest>

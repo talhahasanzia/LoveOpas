@@ -25,8 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/imageView"
-
         android:background="@drawable/background2"
+
         >
 
         <RelativeLayout
@@ -37,6 +37,73 @@
 
             >
 
+
+            <EditText
+                android:background="@drawable/rounded_corner"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:id="@+id/messageText"
+                android:singleLine="false"
+                android:padding="5dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="Message\n\n\n\n"
+                android:textColor="#8b8b8b" />
+
+            <EditText
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_corner"
+                android:layout_height="wrap_content"
+                android:id="@+id/subjectText"
+                android:layout_above="@+id/messageText"
+                android:layout_centerHorizontal="true"
+                android:text="Subject"
+                android:textColor="#8b8b8b" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:background="@drawable/rounded_corner"
+                android:layout_height="wrap_content"
+                android:id="@+id/emailText"
+                android:padding="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_above="@+id/subjectText"
+                android:layout_centerHorizontal="true"
+                android:text="Email"
+                android:textColor="#8b8b8b" />
+
+            <ImageButton
+                android:layout_marginBottom="5dp"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonEmail"
+                android:layout_below="@+id/messageText"
+                android:layout_centerHorizontal="true"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:src="@drawable/email" />
+
+            <ImageButton
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonWebsite"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:src="@drawable/website"
+                android:layout_below="@+id/buttonEmail"
+                android:layout_alignLeft="@+id/buttonEmail"
+                android:layout_alignStart="@+id/buttonEmail" />
 
         </RelativeLayout>
     </FrameLayout>
