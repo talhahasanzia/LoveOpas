@@ -61,6 +61,8 @@
             android:layout_width="300dp"
             android:layout_height="40dp"
             android:singleLine="true"
+            android:textAlignment="center"
+            android:paddingLeft="10dp"
             android:id="@+id/editText"
             android:background="@drawable/rounded_corner"
             android:layout_below="@+id/textView7"
@@ -80,13 +82,39 @@
         <EditText
             android:layout_width="300dp"
             android:layout_height="40dp"
+            android:textAlignment="center"
+            android:paddingLeft="10dp"
             android:layout_marginTop="10dp"
             android:singleLine="true"
             android:id="@+id/editText2"
             android:background="@drawable/rounded_corner"
             android:layout_below="@+id/textView8"
             android:layout_centerHorizontal="true" />
-</RelativeLayout>
+
+            <ImageButton
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonCalculate"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:src="@drawable/website"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/editText2"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Result"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/result"
+                android:layout_below="@+id/buttonCalculate"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
     </FrameLayout>
 
 </RelativeLayout>

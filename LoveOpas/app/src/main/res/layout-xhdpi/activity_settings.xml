@@ -170,8 +170,8 @@ android:background="@drawable/background2"
                 android:thumbTint="@color/colorAccent"
                 android:id="@+id/notifySwitch"
                 android:layout_below="@+id/textView6"
-                android:layout_toLeftOf="@+id/dayText"
-                android:layout_toStartOf="@+id/dayText" />
+                android:layout_alignRight="@+id/starText"
+                android:layout_alignEnd="@+id/starText" />
 
 
         </RelativeLayout>

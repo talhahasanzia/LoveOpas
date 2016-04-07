@@ -6,9 +6,9 @@
     tools:context="com.acidbricks.projects.loveopas.contact_me">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="150dp"
         android:id="@+id/imageView"
-        android:background="@drawable/top"
+
 
         />
     <android.support.v7.widget.Toolbar
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/imageView"
-        android:background="@drawable/background2"
+
 
         >
 
@@ -40,28 +40,27 @@
 
             <EditText
                 android:background="@drawable/rounded_corner"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="230dp"
+                android:layout_height="120dp"
                 android:id="@+id/messageText"
                 android:singleLine="false"
                 android:padding="5dp"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
                 android:text="Message\n\n\n\n"
-                android:textColor="#8b8b8b" />
+                android:textColor="#8b8b8b"
+                android:layout_above="@+id/buttonEmail"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                />
 
             <EditText
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
                 android:padding="5dp"
                 android:layout_width="match_parent"
                 android:background="@drawable/rounded_corner"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:id="@+id/subjectText"
                 android:layout_above="@+id/messageText"
                 android:layout_centerHorizontal="true"
@@ -71,51 +70,53 @@
             <EditText
                 android:layout_width="match_parent"
                 android:background="@drawable/rounded_corner"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:id="@+id/emailText"
                 android:padding="5dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_above="@+id/subjectText"
                 android:layout_centerHorizontal="true"
                 android:text="Email"
                 android:textColor="#8b8b8b" />
 
             <ImageButton
-                android:layout_marginBottom="5dp"
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
                 android:id="@+id/buttonEmail"
-                android:layout_below="@+id/messageText"
-                android:layout_centerHorizontal="true"
                 android:scaleType="fitCenter"
                 android:background="@null"
                 android:adjustViewBounds="true"
-                android:src="@drawable/email" />
+                android:layout_marginTop="3dp"
+                android:src="@drawable/email"
+                android:layout_above="@+id/buttonWebsite"
+                android:layout_centerHorizontal="true" />
 
             <ImageButton
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
                 android:id="@+id/buttonWebsite"
+                android:layout_marginBottom="5dp"
                 android:scaleType="fitCenter"
                 android:background="@null"
                 android:adjustViewBounds="true"
                 android:src="@drawable/website"
-                android:layout_below="@+id/buttonEmail"
+                android:layout_alignParentBottom="true"
                 android:layout_alignLeft="@+id/buttonEmail"
                 android:layout_alignStart="@+id/buttonEmail" />
 
             <ImageButton
-                android:layout_width="280dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/callButton"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/buttonCall"
                 android:scaleType="fitCenter"
                 android:background="@null"
-                android:layout_marginBottom="15dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/email"
                 android:layout_above="@+id/emailText"
                 android:layout_centerHorizontal="true" />
+
 
         </RelativeLayout>
     </FrameLayout>

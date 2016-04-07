@@ -165,9 +165,10 @@ android:background="@drawable/background2"
                 android:track="@drawable/thumb"
                 android:thumbTint="@color/colorAccent"
                 android:id="@+id/notifySwitch"
+                android:checked="false"
                 android:layout_below="@+id/textView6"
-                android:layout_toLeftOf="@+id/dayText"
-                android:layout_toStartOf="@+id/dayText" />
+                android:layout_alignRight="@+id/yearText"
+                android:layout_alignEnd="@+id/yearText" />
 
 
         </RelativeLayout>
